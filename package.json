@@ -39,5 +39,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.26",
+    "@vanilla-extract/css": "^1.11.1",
+    "components": "^0.1.0",
+    "react-icons": "^4.9.0",
+    "react-router-dom": "^6.13.0",
+    "styled": "^1.0.0"
   }
 }
