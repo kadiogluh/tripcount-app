@@ -3,6 +3,8 @@ import { IconContext } from 'react-icons'
 import styled from 'styled-components'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import { SideMenuData } from './SideMenuData'
+import SideMenuContent from './SideMenuContent'
 
 const Nav = styled.div`
   display: flex;
@@ -47,6 +49,9 @@ const SideMenu: React.FC = () => {
           <NavIcon to="#" onClick={showSideMenu}>
             <AiOutlineClose />
           </NavIcon>
+          {SideMenuData.map((item, index) => {
+            return <SideMenuContent item={item} key={index} />
+          })}
         </SideMenuWrap>
       </SidebarNav>
     </IconContext.Provider>

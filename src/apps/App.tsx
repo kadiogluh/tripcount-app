@@ -1,7 +1,8 @@
 import React from 'react'
+import './App.css'
 import SideMenu from '../components/SideMenu'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Europe from '../pages/Europe'
+import MainTable from '../pages/MainTable'
 
 const App: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const App: React.FC = () => {
       <Router>
         <SideMenu />
         <Routes>
-          <Route path="/europe" element={<Europe />} />
+          <Route path="/maintable" element={<MainTable />} />
         </Routes>
       </Router>
     </div>
