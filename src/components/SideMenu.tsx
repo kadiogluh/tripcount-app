@@ -21,6 +21,7 @@ const SidebarNav = styled.div<{ sideMenu: boolean }>`
   position: fixed;
   top: 0;
   left: ${({ sideMenu }) => (sideMenu ? '0' : '-100%')};
+  transition: 200ms;
 `
 const NavIcon = styled(Link)`
   display: flex;

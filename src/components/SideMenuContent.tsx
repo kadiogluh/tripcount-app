@@ -19,6 +19,7 @@ const SideMenuLink = styled(Link)`
 
   &:hover {
     background-color: #595955;
+    border-left: 4px solid #973e95;
   }
 `
 const SideMenuLabel = styled.span`
@@ -33,6 +34,10 @@ const DropdownLink = styled(Link)`
   padding: 2.5rem;
   text-decoration: none;
   color: #ffffff;
+
+  &:hover {
+    background-color: #973e95;
+  }
 `
 
 const SideMenuContent: React.FC<SideMenuProps> = ({ item }) => {

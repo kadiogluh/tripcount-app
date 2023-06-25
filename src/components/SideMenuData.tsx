@@ -12,8 +12,8 @@ export const SideMenuData: SideMenuItem[] = [
     title: 'Continents',
     path: '/continents',
     icon: <VscCircleLargeFilled />,
-    iconOpened: <AiFillCaretDown />,
-    iconClosed: <AiFillCaretUp />,
+    iconOpened: <AiFillCaretUp />,
+    iconClosed: <AiFillCaretDown />,
     subMenu: [
       {
         title: 'Africa',
