@@ -1,6 +1,11 @@
-import React from 'react'
+import Accordion from '../components/Accordion'
+import './Maintable.css'
 
-const MainTable: React.FC = () => {
-  return <div className="maintable">MainTable</div>
+function MainTable() {
+  return (
+    <div className="container">
+      <Accordion />
+    </div>
+  )
 }
 export default MainTable
