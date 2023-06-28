@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React from 'react'
 import { AccordionItem } from '../models/AccordionItem'
 import './AccordionContent.css'
 import { AiOutlineDown } from 'react-icons/ai'
@@ -14,18 +14,6 @@ const AccordionContent: React.FC<AccordionProps> = ({
   isOpen,
   btnOnClick,
 }) => {
-  const contentRef = useRef<HTMLDivElement>(null)
-  const [height, setHeight] = useState(0)
-
-  useEffect(() => {
-    if (isOpen) {
-      const contentEl = contentRef.current as HTMLDivElement
-
-      setHeight(contentEl.scrollHeight)
-    } else {
-      setHeight(0)
-    }
-  }, [isOpen])
   return (
     <li className="accordion-item">
       <h2 className="accordion-item-title">
@@ -34,12 +22,17 @@ const AccordionContent: React.FC<AccordionProps> = ({
           <AiOutlineDown />
         </button>
       </h2>
-
-      <div className="accordion-item-container" style={{ height }}>
-        <div ref={contentRef} className="accordion-item-content">
-          {data.countries}
+      {isOpen && (
+        <div>
+          {data.countries.map((country) => {
+            return (
+              <div className="accordion-item-container">
+                <div className="accordion-item-content">{country}</div>
+              </div>
+            )
+          })}
         </div>
-      </div>
+      )}
     </li>
   )
 }

@@ -7,7 +7,9 @@
 .accordion-item-title {
   width: 100%;
   margin: 0;
+  overflow: hidden;
 }
+
 .accordion-item-btn {
   display: flex;
   justify-content: space-between;
@@ -38,5 +40,5 @@
 
 .accordion-item-content {
   border-top: 1px solid #ccc;
-  padding: 15px 20px;
+  padding: 2px 30px;
 }
