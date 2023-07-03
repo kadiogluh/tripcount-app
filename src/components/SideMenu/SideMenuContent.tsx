@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SideMenuItem } from '../models/SideMenuItem'
+import { SideMenuItem } from '../../models/SideMenuItem'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 

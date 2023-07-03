@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AccordionContent from './AccordionContent'
-import { AccordionData } from './AccordionData'
+import { Data } from '../Data'
 import './Accordion.css'
 
 const Accordion: React.FC = () => {
@@ -11,7 +11,7 @@ const Accordion: React.FC = () => {
 
   return (
     <ul className="accordion">
-      {AccordionData.map((item, index) => (
+      {Data.map((item, index) => (
         <AccordionContent
           data={item}
           key={index}

@@ -1,6 +1,6 @@
 import { AccordionItem } from '../models/AccordionItem'
 
-export const AccordionData: AccordionItem[] = [
+export const Data: AccordionItem[] = [
   {
     name: 'Africa',
     countries: [

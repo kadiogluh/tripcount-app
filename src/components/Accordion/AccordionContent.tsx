@@ -1,9 +1,9 @@
 import React from 'react'
-import { AccordionItem } from '../models/AccordionItem'
+import { AccordionItem } from '../../models/AccordionItem'
 import './AccordionContent.css'
 import { AiOutlineDown } from 'react-icons/ai'
 
-export type AccordionProps = {
+type AccordionProps = {
   data: AccordionItem
   isOpen: boolean
   btnOnClick: () => void
