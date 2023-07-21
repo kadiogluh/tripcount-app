@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import MainTable from '../pages/MainTable'
 import { Data } from '../components/Data'
-import CountryCard from '../components/CountryCard/CountryCard'
+import { ContinentPage } from '../pages/Continents'
 
 const App: React.FC = () => {
   return (
@@ -31,20 +31,3 @@ const App: React.FC = () => {
 }
 
 export default App
-
-interface ContinentPageProps {
-  continent: {
-    name: string
-    countries: string[]
-  }
-}
-const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
-  return (
-    <div>
-      <h2>{continent.name}</h2>
-      {continent.countries.map((country, index) => (
-        <CountryCard key={index} name={country} />
-      ))}
-    </div>
-  )
-}

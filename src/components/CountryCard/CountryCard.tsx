@@ -1,21 +1,29 @@
-import { useState } from 'react'
 import './CountryCard.css'
 
 interface CountryCardProps {
   name: string
+  checked: boolean
+  onCheck: (country: string) => void
 }
 
-const CountryCard: React.FC<CountryCardProps> = ({ name }) => {
-  const [checked, setChecked] = useState(false)
-
+const CountryCard: React.FC<CountryCardProps> = ({
+  name,
+  checked,
+  onCheck,
+}) => {
   const handleCheck = () => {
-    setChecked(!checked)
+    onCheck(name)
   }
 
   return (
     <div className={`country-card ${checked ? 'checked' : ''}`}>
       <h2>{name}</h2>
-      <button onClick={handleCheck}>{checked ? 'Uncheck' : 'Check'}</button>
+      <button
+        className={`check-button ${checked ? 'checked' : ''}`}
+        onClick={handleCheck}
+      >
+        {checked ? 'Uncheck' : 'Check'}
+      </button>
     </div>
   )
 }
