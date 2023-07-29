@@ -2,22 +2,23 @@
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5%;
+  background-color: rgb(255, 255, 255);
 }
 
 .country-card h2 {
-  display: block;
   width: 100%;
-  aspect-ratio: 3/2;
+  aspect-ratio: 5/3;
 }
 
 .country-card.checked {
-  background-color: #b6b6b6;
+  background-color: #00b6795d;
 }
 
 .check-button {
-  background-color: #007bff;
+  background-color: #5acbff;
   color: #fff;
   width: 70%;
+  aspect-ratio: 5;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -29,7 +30,7 @@
 }
 
 .check-button.checked {
-  background-color: #595959;
+  background-color: #bbbbbb;
   color: #fff;
   width: 70%;
   border: none;
