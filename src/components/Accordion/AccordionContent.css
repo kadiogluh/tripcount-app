@@ -34,11 +34,16 @@
 }
 
 .accordion-item-container {
+  border: 1px solid #e2e2e2;
+  padding: 2px 30px;
+  border-radius: 3px;
   transition: height 0.2s ease-in-out;
   overflow: hidden;
+  color: darkgrey;
 }
 
-.accordion-item-content {
-  border-top: 1px solid #ccc;
-  padding: 2px 30px;
+.accordion-item-container.checked {
+  border-color: white;
+  background-color: #00b6795d;
+  color: black;
 }

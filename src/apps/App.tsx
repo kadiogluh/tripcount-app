@@ -4,8 +4,9 @@ import SideMenu from '../components/SideMenu/SideMenu'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MainTable from '../pages/MainTable'
 import { Data } from '../components/Data'
-import { ContinentPage } from '../pages/Continents'
-import { ContinentProvider } from '../pages/ContinentContext'
+import { ContinentPage } from '../pages/ContinentsPage'
+import { ContinentProvider } from '../components/ContinentContext'
+import HomePage from '../pages/HomePage'
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,11 @@ const App: React.FC = () => {
         <ContinentProvider>
           <SideMenu />
           <Routes>
+            <Route path="/" element={<HomePage />} />
+
             <Route path="/maintable" element={<MainTable />} />
+            <Route path="/continents" element={<HomePage />} />
+
             {Data.map((continent) => (
               <Route
                 key={continent.name}

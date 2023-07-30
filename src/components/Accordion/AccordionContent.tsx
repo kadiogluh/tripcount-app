@@ -2,6 +2,7 @@ import React from 'react'
 import { AccordionItem } from '../../models/AccordionItem'
 import './AccordionContent.css'
 import { AiOutlineDown } from 'react-icons/ai'
+import { useContinentContext } from '../ContinentContext'
 
 type AccordionProps = {
   data: AccordionItem
@@ -14,6 +15,7 @@ const AccordionContent: React.FC<AccordionProps> = ({
   isOpen,
   btnOnClick,
 }) => {
+  const { checkedCountries } = useContinentContext()
   return (
     <li className="accordion-item">
       <h2 className="accordion-item-title">
@@ -25,9 +27,15 @@ const AccordionContent: React.FC<AccordionProps> = ({
       {isOpen && (
         <div>
           {data.countries.map((country) => {
+            const isChecked = checkedCountries.includes(country)
             return (
-              <div className="accordion-item-container">
-                <div className="accordion-item-content">{country}</div>
+              <div
+                key={country}
+                className={`accordion-item-container ${
+                  isChecked ? 'checked' : ''
+                }`}
+              >
+                {country}
               </div>
             )
           })}

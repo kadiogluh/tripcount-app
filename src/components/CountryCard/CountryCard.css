@@ -1,6 +1,7 @@
 .country-card {
   border: 1px solid #ccc;
   padding: 20px;
+  color: darkgrey;
   border-radius: 5%;
   background-color: rgb(255, 255, 255);
 }
@@ -12,6 +13,7 @@
 
 .country-card.checked {
   background-color: #00b6795d;
+  color: black;
 }
 
 .check-button {

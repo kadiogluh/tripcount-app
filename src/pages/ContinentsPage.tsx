@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import CountryCard from '../components/CountryCard/CountryCard'
 import { AccordionItem } from '../models/AccordionItem'
-import './Continents.css'
-import { useContinentContext } from './ContinentContext'
+import './ContinentsPage.css'
+import { useContinentContext } from '../components/ContinentContext'
 
 interface ContinentPageProps {
   continent: AccordionItem
@@ -29,13 +29,13 @@ export const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
   const totalCount = continent.countries.length
 
   // Set the title color
-  const [titleColor, setTitleColor] = React.useState('#5acbff')
+  const [titleColor, setTitleColor] = React.useState('#00b6795d')
 
   useEffect(() => {
     if (checkedCount === totalCount) {
-      setTitleColor('#5acbff')
+      setTitleColor('#00b6795d')
     } else {
-      setTitleColor('#039a685d')
+      setTitleColor('#d5d5d5')
     }
   }, [checkedCount, totalCount])
 
