@@ -27,8 +27,8 @@
   cursor: pointer;
 }
 
-.card-bottom button:hover {
-  background-color: #0056b3;
+.check-button:hover {
+  background-color: #0478f3;
 }
 
 .check-button.checked {
@@ -39,4 +39,7 @@
   border-radius: 4px;
   padding: 8px 16px;
   cursor: pointer;
+}
+.check-button.checked:hover {
+  background-color: #999999;
 }

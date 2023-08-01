@@ -15,13 +15,17 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: rgb(238, 237, 237);
+  background-color: #eeeded;
   border: 0;
   padding: 15px 20px;
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
   user-select: none;
+}
+
+.accordion-item-btn:hover {
+  background-color: #cacaca;
 }
 .accordion-item-btn::after {
   justify-content: right;

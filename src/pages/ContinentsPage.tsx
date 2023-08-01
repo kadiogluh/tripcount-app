@@ -4,7 +4,7 @@ import { AccordionItem } from '../models/AccordionItem'
 import './ContinentsPage.css'
 import { useContinentContext } from '../components/ContinentContext'
 
-interface ContinentPageProps {
+export interface ContinentPageProps {
   continent: AccordionItem
 }
 

@@ -7,6 +7,7 @@ import { Data } from '../components/Data'
 import { ContinentPage } from '../pages/ContinentsPage'
 import { ContinentProvider } from '../components/ContinentContext'
 import HomePage from '../pages/HomePage'
+import Continent from '../pages/Continent'
 
 const App: React.FC = () => {
   return (
@@ -14,11 +15,11 @@ const App: React.FC = () => {
       <Router>
         <ContinentProvider>
           <SideMenu />
+
           <Routes>
             <Route path="/" element={<HomePage />} />
-
             <Route path="/maintable" element={<MainTable />} />
-            <Route path="/continents" element={<HomePage />} />
+            <Route path="/continents" element={<Continent />} />
 
             {Data.map((continent) => (
               <Route

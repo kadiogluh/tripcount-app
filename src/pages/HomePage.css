@@ -1,0 +1,28 @@
+.gradient-background {
+  height: 100vh;
+  background: linear-gradient(to top, #4a148caf, #2195f394);
+}
+
+.center-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tripcount-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 100px;
+  color: transparent;
+  animation: fade-in 2s forwards;
+}
+
+@keyframes fade-in {
+  to {
+    color: white;
+  }
+}
+
+.tripcount-link {
+  text-decoration: none;
+}
