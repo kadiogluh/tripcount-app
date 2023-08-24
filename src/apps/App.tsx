@@ -17,7 +17,7 @@ const App: React.FC = () => {
           <SideMenu />
 
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/tripcount-app" element={<HomePage />} />
             <Route path="/maintable" element={<MainTable />} />
             <Route path="/continents" element={<Continent />} />
 
