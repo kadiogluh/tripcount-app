@@ -1,7 +1,7 @@
 import React from 'react'
 import { AccordionItem } from '../../models/AccordionItem'
 import './AccordionContent.css'
-import { AiOutlineDown } from 'react-icons/ai'
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { useContinentContext } from '../ContinentContext'
 
 type AccordionProps = {
@@ -21,7 +21,7 @@ const AccordionContent: React.FC<AccordionProps> = ({
       <h2 className="accordion-item-title">
         <button className="accordion-item-btn" onClick={btnOnClick}>
           {data.name}
-          <AiOutlineDown />
+          {isOpen ? <AiOutlineUp /> : <AiOutlineDown />}
         </button>
       </h2>
       {isOpen && (
