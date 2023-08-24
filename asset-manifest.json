@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tripcount/static/css/main.4f80cb12.css",
+    "main.js": "/tripcount/static/js/main.60523f98.js",
+    "index.html": "/tripcount/index.html",
+    "main.4f80cb12.css.map": "/tripcount/static/css/main.4f80cb12.css.map",
+    "main.60523f98.js.map": "/tripcount/static/js/main.60523f98.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f80cb12.css",
+    "static/js/main.60523f98.js"
+  ]
+}
