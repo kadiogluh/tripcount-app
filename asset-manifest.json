@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tripcount-app/static/css/main.4f80cb12.css",
-    "main.js": "/tripcount-app/static/js/main.19c8eb76.js",
+    "main.js": "/tripcount-app/static/js/main.17918831.js",
     "index.html": "/tripcount-app/index.html",
     "main.4f80cb12.css.map": "/tripcount-app/static/css/main.4f80cb12.css.map",
-    "main.19c8eb76.js.map": "/tripcount-app/static/js/main.19c8eb76.js.map"
+    "main.17918831.js.map": "/tripcount-app/static/js/main.17918831.js.map"
   },
   "entrypoints": [
     "static/css/main.4f80cb12.css",
-    "static/js/main.19c8eb76.js"
+    "static/js/main.17918831.js"
   ]
 }
