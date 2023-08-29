@@ -1,43 +1,39 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CountryCard from '../components/CountryCard/CountryCard'
-import { AccordionItem } from '../models/AccordionItem'
 import './ContinentsPage.css'
-import { useContinentContext } from '../components/ContinentContext'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  addCountry,
+  removeCountry,
+} from '../components/GlobalState/checkedCountriesSlice'
+import { RootState } from '../components/GlobalState/store'
+import { AccordionItem } from '../models/AccordionItem'
 
-export interface ContinentPageProps {
+interface ContinentPageProps {
   continent: AccordionItem
 }
 
-export const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
-  const { checkedCountries, setCheckedCountries } = useContinentContext()
+const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
+  const checkedCountries = useSelector(
+    (state: RootState) => state.checkedCountries.countries
+  )
+  const dispatch = useDispatch()
 
   const handleCountryCheck = (country: string) => {
     if (checkedCountries.includes(country)) {
-      setCheckedCountries((prevChecked) =>
-        prevChecked.filter((c) => c !== country)
-      )
+      dispatch(removeCountry(country))
     } else {
-      setCheckedCountries((prevChecked) => [...prevChecked, country])
+      dispatch(addCountry(country))
     }
   }
 
-  // Number of countries checked
   const checkedCount = checkedCountries.filter((country) =>
     continent.countries.includes(country)
   ).length
-  // Total number of countries
+
   const totalCount = continent.countries.length
 
-  // Set the title color
-  const [titleColor, setTitleColor] = React.useState('#00b6795d')
-
-  useEffect(() => {
-    if (checkedCount === totalCount) {
-      setTitleColor('#00b6795d')
-    } else {
-      setTitleColor('#d5d5d5')
-    }
-  }, [checkedCount, totalCount])
+  const titleColor = checkedCount === totalCount ? '#00b6795d' : '#d5d5d5'
 
   return (
     <div className="subcontainer">
@@ -60,3 +56,5 @@ export const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
     </div>
   )
 }
+
+export default ContinentPage

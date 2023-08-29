@@ -1,8 +1,10 @@
 import React from 'react'
-import { AccordionItem } from '../../models/AccordionItem'
+import { useSelector } from 'react-redux'
+import { RootState } from '../GlobalState/store'
 import './AccordionContent.css'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
-import { useContinentContext } from '../ContinentContext'
+import { AccordionItem } from '../../models/AccordionItem'
+import { CheckedCountryItem } from './checkedCountryItem'
 
 type AccordionProps = {
   data: AccordionItem
@@ -15,11 +17,22 @@ const AccordionContent: React.FC<AccordionProps> = ({
   isOpen,
   btnOnClick,
 }) => {
-  const { checkedCountries } = useContinentContext()
+  const checkedCountries = useSelector(
+    (state: RootState) => state.checkedCountries.countries
+  )
+
+  const isAllCountriesChecked = data.countries.every((country) =>
+    checkedCountries.includes(country)
+  )
   return (
     <li className="accordion-item">
       <h2 className="accordion-item-title">
-        <button className="accordion-item-btn" onClick={btnOnClick}>
+        <button
+          className={`accordion-item-btn ${
+            isAllCountriesChecked ? 'all-checked' : ''
+          }`}
+          onClick={btnOnClick}
+        >
           {data.name}
           {isOpen ? <AiOutlineUp /> : <AiOutlineDown />}
         </button>
@@ -27,21 +40,12 @@ const AccordionContent: React.FC<AccordionProps> = ({
       {isOpen && (
         <div>
           {data.countries.map((country) => {
-            const isChecked = checkedCountries.includes(country)
-            return (
-              <div
-                key={country}
-                className={`accordion-item-container ${
-                  isChecked ? 'checked' : ''
-                }`}
-              >
-                {country}
-              </div>
-            )
+            return <CheckedCountryItem key={country} country={country} />
           })}
         </div>
       )}
     </li>
   )
 }
+
 export default AccordionContent

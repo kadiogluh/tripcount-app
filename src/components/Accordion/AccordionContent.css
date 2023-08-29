@@ -1,6 +1,7 @@
 .accordion-item {
   border: 1px solid #f1f1f1;
 }
+
 .accordion-item:not(:first-of-type) {
   border-top: none;
 }
@@ -24,6 +25,13 @@
   user-select: none;
 }
 
+.accordion-item-btn.all-checked {
+  background-color: #00b6795d;
+}
+
+.accordion-item-btn.all-checked:hover {
+  background-color: #00704bce;
+}
 .accordion-item-btn:hover {
   background-color: #cacaca;
 }
@@ -47,6 +55,8 @@
 }
 
 .accordion-item-container.checked {
+  display: flex;
+
   border-color: white;
   background-color: #00b6795d;
   color: black;

@@ -1,0 +1,48 @@
+.accordion-item-container {
+  border: 1px solid #e2e2e2;
+  padding: 2px;
+  padding-left: 30px;
+  border-radius: 3px;
+  transition: height 0.2s ease-in-out;
+  overflow: hidden;
+  color: darkgrey;
+}
+
+.accordion-item-container.checked {
+  display: flex;
+  justify-content: space-between;
+  border-color: white;
+  background-color: #00b6795d;
+  color: black;
+}
+
+.count-box {
+  display: flex;
+  align-items: center;
+}
+
+.count-box {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.count-box span {
+  display: flex;
+  width: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-button {
+  width: 20px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
