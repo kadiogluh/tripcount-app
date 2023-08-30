@@ -35,6 +35,10 @@ The following dependencies are required to run Tripcount:
 - **react-icons/ai**
 - **react-icons**
 
+## Deployment
+
+https://kadiogluh.github.io/tripcount-app/
+
 ## Installation
 
 To run Tripcount locally, follow these steps:
