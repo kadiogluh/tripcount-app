@@ -4,7 +4,7 @@ Tripcount is a React TypeScript application where travelled countries can be mar
 
 I used create react-app for the project.
 
-![page](https://kadiogluh.github.io/continents/antartica/1.png)
+![page](https://kadiogluh.github.io/continents/antartica)
 
 ## Features
 
