@@ -9,7 +9,7 @@ import ContinentPage from '../pages/ContinentsPage'
 import HomePage from '../pages/HomePage'
 import Continent from '../pages/Continent'
 
-import { Provider } from 'react-redux' // Import Provider from react-redux
+import { Provider } from 'react-redux'
 import store from '../components/GlobalState/store'
 
 const App: React.FC = () => {

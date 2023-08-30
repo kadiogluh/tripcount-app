@@ -22,8 +22,11 @@ const AccordionContent: React.FC<AccordionProps> = ({
   )
 
   const isAllCountriesChecked = data.countries.every((country) =>
-    checkedCountries.includes(country)
+    checkedCountries.some(
+      (checkedCountry) => checkedCountry.country === country
+    )
   )
+
   return (
     <li className="accordion-item">
       <h2 className="accordion-item-title">

@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { RootState } from '../GlobalState/store'
+import React from 'react'
 import './checkedCountryItem.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../GlobalState/store'
+import {
+  incrementCount,
+  decrementCount,
+} from '../GlobalState/checkedCountriesSlice'
 
 interface CheckedCountryItemProps {
   country: string
@@ -10,21 +14,23 @@ interface CheckedCountryItemProps {
 export const CheckedCountryItem: React.FC<CheckedCountryItemProps> = ({
   country,
 }) => {
-  const [count, setCount] = useState(1)
+  const dispatch = useDispatch()
 
   const handleIncrement = () => {
-    setCount(count + 1)
+    dispatch(incrementCount(country))
   }
 
   const handleDecrement = () => {
-    if (count > 1) {
-      setCount(count - 1)
-    }
+    dispatch(decrementCount(country))
   }
 
-  const isChecked = useSelector((state: RootState) =>
-    state.checkedCountries.countries.includes(country)
+  const checkedCountry = useSelector((state: RootState) =>
+    state.checkedCountries.countries.find(
+      (checkedCountry) => checkedCountry.country === country
+    )
   )
+
+  const isChecked = checkedCountry !== undefined
 
   return (
     <div className={`accordion-item-container ${isChecked ? 'checked' : ''}`}>
@@ -34,11 +40,11 @@ export const CheckedCountryItem: React.FC<CheckedCountryItemProps> = ({
           <button
             className="count-button"
             onClick={handleDecrement}
-            disabled={count === 1}
+            disabled={checkedCountry!.count === 1}
           >
             -
           </button>
-          <span>{count}</span>
+          <span>{checkedCountry!.count}</span>
           <button className="count-button" onClick={handleIncrement}>
             +
           </button>

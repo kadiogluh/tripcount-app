@@ -20,15 +20,19 @@ const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
   const dispatch = useDispatch()
 
   const handleCountryCheck = (country: string) => {
-    if (checkedCountries.includes(country)) {
+    const isCountryChecked = checkedCountries.some(
+      (checkedCountry) => checkedCountry.country === country
+    )
+
+    if (isCountryChecked) {
       dispatch(removeCountry(country))
     } else {
       dispatch(addCountry(country))
     }
   }
 
-  const checkedCount = checkedCountries.filter((country) =>
-    continent.countries.includes(country)
+  const checkedCount = checkedCountries.filter((checkedCountry) =>
+    continent.countries.includes(checkedCountry.country)
   ).length
 
   const totalCount = continent.countries.length
@@ -48,8 +52,10 @@ const ContinentPage: React.FC<ContinentPageProps> = ({ continent }) => {
           <CountryCard
             key={index}
             name={country}
-            checked={checkedCountries.includes(country)}
-            onCheck={handleCountryCheck}
+            checked={checkedCountries.some(
+              (checkedCountry) => checkedCountry.country === country
+            )}
+            onCheck={() => handleCountryCheck(country)}
           />
         ))}
       </div>

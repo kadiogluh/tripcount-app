@@ -1,7 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+interface CheckedCountry {
+  country: string
+  count: number
+}
+
 interface CheckedCountriesState {
-  countries: string[]
+  countries: CheckedCountry[]
 }
 
 const initialState: CheckedCountriesState = {
@@ -13,15 +18,32 @@ const checkedCountriesSlice = createSlice({
   initialState,
   reducers: {
     addCountry: (state, action: PayloadAction<string>) => {
-      state.countries.push(action.payload)
+      state.countries.push({ country: action.payload, count: 1 })
     },
     removeCountry: (state, action: PayloadAction<string>) => {
       state.countries = state.countries.filter(
-        (country) => country !== action.payload
+        (country) => country.country !== action.payload
       )
+    },
+    incrementCount: (state, action: PayloadAction<string>) => {
+      const country = state.countries.find(
+        (country) => country.country === action.payload
+      )
+      if (country) {
+        country.count += 1
+      }
+    },
+    decrementCount: (state, action: PayloadAction<string>) => {
+      const country = state.countries.find(
+        (country) => country.country === action.payload
+      )
+      if (country && country.count > 1) {
+        country.count -= 1
+      }
     },
   },
 })
 
-export const { addCountry, removeCountry } = checkedCountriesSlice.actions
+export const { addCountry, removeCountry, incrementCount, decrementCount } =
+  checkedCountriesSlice.actions
 export default checkedCountriesSlice.reducer
